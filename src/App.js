@@ -4,6 +4,7 @@ import TodoList from "./examples/Todolist";
 import UseEffectExample from "./examples/UseEffectExample";
 import UseReducerAddMinusExample from "./examples/UseReducerAddMinusExample";
 import UserReducerShoppingList from "./examples/UserReducerShoppingList";
+import Comparison from "./examples/Comparison";
 
 const App = () => {
   return (
@@ -12,7 +13,15 @@ const App = () => {
         <h2>React Hook Examples</h2>
         <ul>
           <li>
-            <Link to="/todolist-example">Basic TodoList Example with UseState</Link>
+            <Link to="/comparison">
+              Using state and lifecycles in Classes vs using hooks in functions
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/todolist-example">
+              Basic TodoList Example with UseState
+            </Link>
           </li>
           <li>
             <Link to="/use-effect-example">Basic UseEffect Example</Link>
@@ -29,9 +38,11 @@ const App = () => {
           </li>
         </ul>
 
-        <h4>Current Example</h4>
+        <h2>Current Example</h2>
 
         <Switch>
+          <Route exact path="/comparison" component={Comparison} />
+
           <Route exact path="/todolist-example" component={TodoList} />
           <Route
             exact
