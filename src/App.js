@@ -5,6 +5,7 @@ import UseEffectExample from "./examples/UseEffectExample";
 import UseReducerAddMinusExample from "./examples/UseReducerAddMinusExample";
 import UserReducerShoppingList from "./examples/UserReducerShoppingList";
 import Comparison from "./examples/Comparison";
+import UseContextExample from "./examples/UseContextExample";
 
 const App = () => {
   return (
@@ -36,6 +37,9 @@ const App = () => {
               UseReducer Example Shopping List
             </Link>
           </li>
+          <li>
+            <Link to="use-context-example">Use context</Link>
+          </li>
         </ul>
 
         <h2>Current Example</h2>
@@ -58,6 +62,11 @@ const App = () => {
             exact
             path="/use-reducer-shopping-list"
             component={UserReducerShoppingList}
+          />
+          <Route
+            exact
+            path="/use-context-example"
+            component={UseContextExample}
           />
         </Switch>
       </div>

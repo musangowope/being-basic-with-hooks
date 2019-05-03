@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 
 const HooksExample = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [counter, setCounter] = useState(0);
+  const [sipsOfCoffee, setSipsOfCoffee] = useState(0);
 
   useEffect(() => {
-    document.title = counter;
+    document.title = sipsOfCoffee;
 
     window.addEventListener("resize", handleResize);
     return () => {
@@ -14,13 +14,13 @@ const HooksExample = () => {
   });
 
   const handleResize = () => setScreenWidth(window.innerWidth);
-  const increment = () => setCounter(counter + 1);
+  const increment = () => setSipsOfCoffee(sipsOfCoffee + 1);
 
   return (
     <div>
       <h4>Function Component with Hooks</h4>
       <div>
-        <span>Number of clicks {counter}</span>
+        <span>Number of sips of Coffee {sipsOfCoffee}</span>
         <button type="button" onClick={increment}>
           Click me
         </button>

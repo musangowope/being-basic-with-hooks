@@ -1,18 +1,22 @@
 import React, { Component, Fragment } from "react";
 
+/*
+* Let's try and make this a fun example :)
+* */
+
 class ClassExample extends Component {
   state = {
     screenWidth: window.innerWidth,
-    screenCounter: 0
+    sipsOfCoffee: 0
   };
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
-    document.title = this.state.screenCounter;
+    document.title = this.state.sipsOfCoffee;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    document.title = this.state.screenCounter;
+    document.title = this.state.sipsOfCoffee;
   }
 
   componentWillUnmount() {
@@ -25,18 +29,18 @@ class ClassExample extends Component {
 
   increment = () =>
     this.setState(prevState => ({
-      screenCounter: prevState.screenCounter + 1
+      sipsOfCoffee: prevState.sipsOfCoffee + 1
     }));
 
   render() {
-    const { screenWidth, screenCounter } = this.state;
+    const { screenWidth, sipsOfCoffee } = this.state;
     return (
       <Fragment>
         <h4>Classes</h4>
         <div>
-          <span>Number of clicks {screenCounter}</span>
+          <span>Number of Sips of Coffee {sipsOfCoffee}</span>
           <button type="button" onClick={this.increment}>
-            Click me
+            Take a sip of coffee
           </button>
         </div>
         <div>Screen Width: {screenWidth}</div>
