@@ -9,9 +9,9 @@ const HooksExample = () => {
 
     window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("scroll", handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  });
+  }, [screenWidth, sipsOfCoffee]);
 
   const handleResize = () => setScreenWidth(window.innerWidth);
   const increment = () => setSipsOfCoffee(sipsOfCoffee + 1);

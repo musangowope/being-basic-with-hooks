@@ -16,7 +16,9 @@ class ClassExample extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    document.title = this.state.sipsOfCoffee;
+    if(prevState.sipsOfCoffee !== this.state.sipsOfCoffee) {
+      document.title = this.state.sipsOfCoffee;
+    }
   }
 
   componentWillUnmount() {
